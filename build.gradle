@@ -1,3 +1,7 @@
+group = "one.chest.minecraft"
+version = "0.0.1"
+
+
 buildscript {
     repositories {
         jcenter()
@@ -5,16 +9,21 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.10"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle.forge'
 
+apply from: 'curseforge.gradle'
 apply from: 'license.gradle'
 apply from: 'setupServer.gradle'
 
@@ -37,6 +46,5 @@ processResources {
     from(sourceSets['main'].resources.srcDirs) {
         include 'mcmod.info'
         expand 'version': project.version, 'mcversion': minecraft.version
-        exclude 'mcmod.info'
     }
 }

@@ -1,0 +1,11 @@
+apply plugin: 'com.matthewprenger.cursegradle'
+
+curseforge {
+    if (project.hasProperty("curseforgeKey")) {
+        apiKey = curseforgeKey
+    }
+    project {
+        id = '286246'
+        releaseType = 'alpha'
+    }
+}
