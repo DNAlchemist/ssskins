@@ -1,0 +1,7 @@
+apply plugin: 'license'
+
+license {
+    header file('LICENSE_HEADER')
+    exclude "**/org.codehaus.groovy.runtime.ExtensionModule"
+}
+
