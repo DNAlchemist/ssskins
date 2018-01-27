@@ -1,12 +1,12 @@
 [
 {
-  "modid": "skinny",
-  "name": "Skinny Mod",
+  "modid": "ssskins",
+  "name": "Server Side Skins",
   "description": "Mod allows to set custom skins location url on the server side.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://github.com/DNAlchemist/minecraft-skinny",
-  "updateUrl": "https://github.com/DNAlchemist/minecraft-skinny",
+  "url": "https://github.com/DNAlchemist/ssskins",
+  "updateUrl": "https://github.com/DNAlchemist/ssskins",
   "authorList": ["DNAlchemist"],
   "credits": "",
   "logoFile": "",

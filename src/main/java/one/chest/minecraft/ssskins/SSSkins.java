@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package one.chest.minecraft.skinny;
+package one.chest.minecraft.ssskins;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -23,10 +23,11 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 /**
  * Created by ruslanmikhalev on 09/04/17.
  */
-@Mod(modid = Skinny.MOD_ID, version = Skinny.VERSION)
-public class Skinny {
+@Mod(modid = SSSkins.MOD_ID, name = SSSkins.NAME, version = SSSkins.VERSION)
+public class SSSkins {
 
-    static final String MOD_ID = "skinny";
+    static final String MOD_ID = "ssskins";
+    static final String NAME = "Server Side Skins";
     static final String VERSION = "0.1";
 
     @Mod.EventHandler
