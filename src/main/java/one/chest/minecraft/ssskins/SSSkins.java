@@ -17,6 +17,7 @@
 package one.chest.minecraft.ssskins;
 
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 
@@ -26,12 +27,20 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 @Mod(modid = SSSkins.MOD_ID, name = SSSkins.NAME, version = SSSkins.VERSION)
 public class SSSkins {
 
-    static final String MOD_ID = "ssskins";
-    static final String NAME = "Server Side Skins";
-    static final String VERSION = "0.1";
+    public static final String MOD_ID = "ssskins";
+    public static final String NAME = "Server Side Skins";
+    public static final String VERSION = "0.0.1";
+
+    @SidedProxy(
+            clientSide = "one.chest.minecraft.ssskins.client.ClientProxy",
+            serverSide = "one.chest.minecraft.ssskins.server.ServerProxy"
+    )
+    private static Proxy proxy;
 
     @Mod.EventHandler
     void init(FMLInitializationEvent event) {
+        proxy.init();
     }
+
 
 }
