@@ -15,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.10"
     }
 }
@@ -34,7 +34,7 @@ runServer.args "nogui"
 System.getProperty("username")?.with({ runClient.args(["--username", it]) });
 
 minecraft {
-    version = "1.10.2-12.18.3.2254"
+    version = "1.12.2-14.23.1.2604"
     runDir = "run"
     mappings = "snapshot_20161111"
 }
