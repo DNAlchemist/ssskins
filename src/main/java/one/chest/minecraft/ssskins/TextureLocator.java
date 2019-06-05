@@ -49,7 +49,9 @@ public class TextureLocator {
             return;
         }
         NetworkPlayerInfo networkPlayerInfo = connection.getPlayerInfo(entityPlayer.getUniqueID());
-
+        if (networkPlayerInfo == null) {
+            return;
+        }
         try {
             Field[] fields = networkPlayerInfo.getClass().getDeclaredFields();
             List<Field> list = fetchFieldsWithType(fields, Map.class);
