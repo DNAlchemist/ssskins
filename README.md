@@ -4,6 +4,8 @@ Mod allows to set custom skins location url on the server side.
 
 Mod uses "http://skins.minecraft.net/MinecraftSkins" path by default.
 
+*ATTENTION! MOJANG no longer uses this path to store skins. You must specify your own*
+
 ## Requirements
 
 * [Minecraft Server](https://minecraft.net/ru-ru/download/server)
