@@ -6,6 +6,15 @@ Mod uses "http://skins.minecraft.net/MinecraftSkins" path by default.
 
 *ATTENTION! MOJANG no longer uses this path to store skins. You must specify your own*
 
+You can use GitHub as an HTTP server.
+For example:
+
+Create repo with name minecraft_skins
+1. Put skin player.png into root folder in your repo
+2. Set URL in the server.properties to https://raw.githubusercontent.com/<your_github_username>/minecraft_skins
+3. A user with the nickname player will get skin player.png.
+Each png file that falls into this repository will be associated with the player's name.
+
 ## Requirements
 
 * [Minecraft Server](https://minecraft.net/ru-ru/download/server)
