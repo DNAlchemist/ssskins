@@ -30,8 +30,8 @@ public class ServerProxy extends CommonProxy {
 
     @Override
     public void registerSettings() {
-        PropertyManager propertyManager = new PropertyManager(new File("server.properties"));
-        String skinsLocation = propertyManager.getStringProperty("ssskins.url", "http://skins.minecraft.net/MinecraftSkins");
+        PropertyManager propertyManager = new PropertyManager(new File("config/ssskins.properties"));
+        String skinsLocation = propertyManager.getStringProperty("ssskins-url", "http://skins.minecraft.net/MinecraftSkins");
         Settings.setInstance(new Settings(skinsLocation));
     }
 
