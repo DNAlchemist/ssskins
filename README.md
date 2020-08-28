@@ -11,7 +11,7 @@ For example:
 
 Create repo with name minecraft_skins
 1. Put skin player.png into root folder in your repo
-2. Set URL in the server.properties to https://raw.githubusercontent.com/<your_github_username>/minecraft_skins
+2. Set URL in the ./config/ssskins.properties to https://raw.githubusercontent.com/<your_github_username>/<repository>/<branch>
 3. A user with the nickname player will get skin player.png.
 Each png file that falls into this repository will be associated with the player's name.
 
@@ -29,10 +29,10 @@ Each png file that falls into this repository will be associated with the player
 
 ## Configuration
 
-Specify ssskins.url in the server.property for changing the skin url, e.g:
+Specify ssskins-url in the ./config/ssskins.properties for changing the skin url, e.g:
 
-    # server.properties
-    ssskins.url=http://chest.one/skins
+    # ssskins.properties
+    ssskins-url=http://chest.one/skins
 
 For a user with a nickname DNAlchemist the skin should be available by URL: 
 
