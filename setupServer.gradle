@@ -2,32 +2,34 @@ assert project.hasProperty("minecraft") : /\
 eual.gradle depends on ForgeGradle plugin. 
 Put "apply plugin: 'net.minecraftforge.gradle.forge'" before "apply from: 'eula.gradle'" instruction/
 
-task acceptEula {
-    doLast {
-        def runDir = new File(minecraft.runDir as String)
-        runDir.mkdirs()
+def runDir = "run"
 
-        new File(runDir, "eula.txt").setText("eula = true", "UTF-8")
+task acceptEula {
+    def runDirFile = new File(runDir as String)
+    doLast {
+        runDirFile.mkdirs()
+
+        new File(runDirFile, "eula.txt").setText("eula = true", "UTF-8")
     }
-    outputs.file new File(minecraft.runDir as String, "eula.txt")
+    outputs.file new File(runDirFile as String, "eula.txt")
 }
 
 task setupServerProperties {
+    def runDirFile = new File(runDir as String)
     doLast {
-        def runDir = new File(minecraft.runDir as String)
-        runDir.mkdirs()
+        runDirFile.mkdirs()
 
         def propertiesFile = file("server.properties");
         if(propertiesFile.exists()) {
             def properties = loadProperties(propertiesFile)
 
-            new File(runDir, "server.properties").withWriter('UTF-8') { writer ->
+            new File(runDirFile, "server.properties").withWriter('UTF-8') { writer ->
                 properties.store(writer, 'Minecraft server properties')
             }
         }
     }
     inputs.file file("server.properties")
-    outputs.file new File(minecraft.runDir as String, "server.properties")
+    outputs.file new File(runDir as String, "server.properties")
 }
 
 static loadProperties(File propertiesFile) {
@@ -38,5 +40,5 @@ static loadProperties(File propertiesFile) {
     }
 }
 
-runServer.dependsOn setupServerProperties
-runServer.dependsOn acceptEula
+//runServer.dependsOn setupServerProperties
+//runServer.dependsOn acceptEula

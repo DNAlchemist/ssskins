@@ -1,6 +1,8 @@
 group = "one.chest.minecraft"
 version = "0.0.4"
 
+def minecraftVersion = "1.16.3"
+def forgeVersion = "34.1.0"
 
 buildscript {
     repositories {
@@ -15,13 +17,13 @@ buildscript {
     }
     dependencies {
         classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.186'
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.4.0"
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
 
 apply from: 'curseforge.gradle'
 apply from: 'license.gradle'
@@ -29,22 +31,28 @@ apply from: 'setupServer.gradle'
 
 sourceCompatibility = targetCompatibility = '1.7'
 
-runServer.args "nogui"
+repositories {
+    jcenter()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:' + minecraftVersion + '-' + forgeVersion
+}
+// runServer.args "nogui"
 
 System.getProperty("username")?.with({ runClient.args(["--username", it]) });
 
 minecraft {
-    version = "1.12.2-14.23.1.2604"
-    runDir = "run"
-    mappings = "snapshot_20161111"
+//    version = "1.16.3-9.11.0.877"
+        mappings channel: "snapshot", version: "20200916-1.16.2"
 }
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "mcversion", minecraft.version
+    inputs.property "mcversion", minecraftVersion
 
     from(sourceSets['main'].resources.srcDirs) {
         include 'mcmod.info'
-        expand 'version': project.version, 'mcversion': minecraft.version
+        expand 'version': project.version, 'mcversion': minecraftVersion
     }
 }
