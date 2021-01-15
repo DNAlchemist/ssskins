@@ -20,11 +20,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-
 /**
  * Created by ruslanmikhalev on 09/04/17.
  */
-@Mod(modid = SSSkins.MOD_ID, name = SSSkins.NAME, version = SSSkins.VERSION)
+@Mod(SSSkins.MOD_ID)
 public class SSSkins {
 
     public static final String MOD_ID = "ssskins";

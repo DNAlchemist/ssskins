@@ -17,7 +17,7 @@
 package one.chest.minecraft.ssskins.client;
 
 import net.minecraftforge.client.event.RenderPlayerEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import one.chest.minecraft.ssskins.TextureLocator;
 
 /**
